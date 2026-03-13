@@ -11,6 +11,7 @@ import IconProgress from "./assets/icon-progress.svg";
 import IconNotification from "./assets/icon-notification.svg";
 import IconLightning from "./assets/icon-lightning.svg";
 import MobileNav from "./components/MobileNav";
+import { FadeIn, StaggerContainer, FadeInStaggerItem, RevealLine } from "./components/AnimatedSections";
 
 export default function Home() {
   const tickerItems = [
@@ -35,7 +36,7 @@ export default function Home() {
             <a href="#how-it-works">How It Works</a>
             <a href="#blogs">Blogs</a>
           </nav>
-          <a className="btn-cta header-cta" href="#cta">
+          <a className="btn-cta header-cta" href="/waitlist">
             Get Started →
           </a>
           <MobileNav />
@@ -44,38 +45,46 @@ export default function Home() {
 
       {/* ═══ HERO ═══ */}
       <section className="hero-section">
-        <div className="container hero-content">
-          <div className="hero-pill">
+        <StaggerContainer className="container hero-content">
+          <FadeInStaggerItem className="hero-pill">
             <span className="hero-dot" />
             Built on Stellar · Now in Beta
-          </div>
+          </FadeInStaggerItem>
 
           <h1 className="hero-h1">
-            <span className="line">Group money.</span>
-            <span className="line">
-              <span className="accent">Finally </span>not
-            </span>
-            <span className="line">
-              a <span className="struck">headache.</span>
-            </span>
+            <RevealLine>
+              <span className="line">Group money.</span>
+            </RevealLine>
+            <RevealLine>
+              <span className="line">
+                <span className="accent">Finally </span>not
+              </span>
+            </RevealLine>
+            <RevealLine>
+              <span className="line">
+                a <span className="struck">headache.</span>
+              </span>
+            </RevealLine>
           </h1>
 
-          <p className="hero-subtitle">
-            Collecting money in a group is unnecessarily hard,
-            embarrassing, and risky. PoolFi fixes that. Share a link,
-            everyone pays, the money stays safe until it&apos;s time.
-          </p>
+          <FadeInStaggerItem>
+            <p className="hero-subtitle">
+              Collecting money in a group is unnecessarily hard,
+              embarrassing, and risky. PoolFi fixes that. Share a link,
+              everyone pays, the money stays safe until it&apos;s time.
+            </p>
+          </FadeInStaggerItem>
 
-          <div className="hero-actions">
-            <a className="btn-primary" href="#cta">
+          <FadeInStaggerItem className="hero-actions">
+            <a className="btn-primary" href="/waitlist">
               Create Your First Pool →
             </a>
             <a className="btn-secondary" href="#how-it-works">
               See how it works ↓
             </a>
-          </div>
+          </FadeInStaggerItem>
 
-          <div className="hero-proof">
+          <FadeInStaggerItem className="hero-proof">
             <div className="proof-avatars" aria-hidden="true">
               <span style={{ backgroundColor: "#1b4fd8" }}>AE</span>
               <span style={{ backgroundColor: "#12b76a" }}>CN</span>
@@ -88,8 +97,8 @@ export default function Home() {
               <br />
               across universities, churches &amp; cooperatives
             </p>
-          </div>
-        </div>
+          </FadeInStaggerItem>
+        </StaggerContainer>
       </section>
 
       {/* ═══ TICKER ═══ */}
@@ -109,14 +118,16 @@ export default function Home() {
 
       {/* ═══ PROBLEM ═══ */}
       <section className="problem-section" id="problem">
-        <div className="container">
-          <p className="section-eyebrow">The problem</p>
-          <h2 className="section-title">
-            Right now, one person
-            <span className="italic-line">suffers for everyone.</span>
-          </h2>
+        <StaggerContainer className="container">
+          <FadeInStaggerItem>
+            <p className="section-eyebrow">The problem</p>
+            <h2 className="section-title">
+              Right now, one person
+              <span className="italic-line">suffers for everyone.</span>
+            </h2>
+          </FadeInStaggerItem>
 
-          <div style={{ marginTop: 19 }}>
+          <FadeInStaggerItem style={{ marginTop: 19 }}>
             <article className="scenario-card">
               <p className="scenario-eyebrow">Every week in Nigeria</p>
               <p className="scenario-text">
@@ -132,10 +143,10 @@ export default function Home() {
                 Nigerian groups.
               </p>
             </article>
-          </div>
+          </FadeInStaggerItem>
 
           <div className="problem-cards-wrap">
-            <article className="problem-card">
+            <FadeInStaggerItem className="problem-card">
               <p className="problem-number">01</p>
               <div className="problem-icon-wrap">
                 <IconAngry />
@@ -154,9 +165,9 @@ export default function Home() {
                   It&apos;s a personal favour nobody signed up for.
                 </strong>
               </p>
-            </article>
+            </FadeInStaggerItem>
 
-            <article className="problem-card">
+            <FadeInStaggerItem className="problem-card">
               <p className="problem-number">02</p>
               <div className="problem-icon-wrap">
                 <IconSuspicious />
@@ -169,9 +180,9 @@ export default function Home() {
                 verification, no transparency, and no recourse when things go
                 wrong.
               </p>
-            </article>
+            </FadeInStaggerItem>
 
-            <article className="problem-card">
+            <FadeInStaggerItem className="problem-card">
               <p className="problem-number">03</p>
               <div className="problem-icon-wrap">
                 <IconMoneyBag />
@@ -186,26 +197,28 @@ export default function Home() {
                 it, lose it, or simply not return it — and nothing in the system
                 prevents this.
               </p>
-            </article>
+            </FadeInStaggerItem>
           </div>
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* ═══ HOW IT WORKS ═══ */}
       <section className="how-section" id="how-it-works">
-        <div className="container">
-          <p className="section-eyebrow">How PoolFi works</p>
-          <h2 className="section-title section-title-light">
-            Three steps.
-            <span className="italic-line">Zero chasing.</span>
-          </h2>
-          <p className="how-subtitle">
-            Create a pool, share one link, and let the system do the work. No
-            manual tracking. No awkward DMs. No more being Chidi.
-          </p>
+        <StaggerContainer className="container">
+          <FadeInStaggerItem>
+            <p className="section-eyebrow">How PoolFi works</p>
+            <h2 className="section-title section-title-light">
+              Three steps.
+              <span className="italic-line">Zero chasing.</span>
+            </h2>
+            <p className="how-subtitle">
+              Create a pool, share one link, and let the system do the work. No
+              manual tracking. No awkward DMs. No more being Chidi.
+            </p>
+          </FadeInStaggerItem>
 
           <div className="steps-row">
-            <div className="step-item">
+            <FadeInStaggerItem className="step-item">
               <div className="step-number-wrap">
                 <div className="step-ring-outer" />
                 <div className="step-ring-inner" />
@@ -218,9 +231,9 @@ export default function Home() {
                 amount, deadline, and fields that you wish to be filled. Takes
                 under 30 seconds.
               </p>
-            </div>
+            </FadeInStaggerItem>
 
-            <div className="step-item">
+            <FadeInStaggerItem className="step-item" delay={0.1}>
               <div className="step-number-wrap">
                 <div className="step-ring-outer" />
                 <div className="step-ring-inner" />
@@ -233,9 +246,9 @@ export default function Home() {
                 and pay at their own pace before the deadline. No bank account
                 numbers flying around WhatsApp.
               </p>
-            </div>
+            </FadeInStaggerItem>
 
-            <div className="step-item">
+            <FadeInStaggerItem className="step-item" delay={0.2}>
               <div className="step-number-wrap">
                 <div className="step-ring-outer" />
                 <div className="step-ring-inner" />
@@ -249,11 +262,11 @@ export default function Home() {
                 personal account. They release automatically when conditions are
                 met. Everyone can verify the balance at any time.
               </p>
-            </div>
+            </FadeInStaggerItem>
           </div>
 
           <div className="pool-types">
-            <article className="type-card">
+            <FadeInStaggerItem className="type-card">
               <div className="type-head">
                 <span className="type-tag blue">
                   <IconGoalPool />
@@ -288,9 +301,9 @@ export default function Home() {
                   Family meeting and association levies
                 </div>
               </div>
-            </article>
+            </FadeInStaggerItem>
 
-            <article className="type-card">
+            <FadeInStaggerItem className="type-card" delay={0.1}>
               <div className="type-head">
                 <span className="type-tag green">
                   <IconImpactPool />
@@ -326,25 +339,27 @@ export default function Home() {
                   Cooperative and trade association funds
                 </div>
               </div>
-            </article>
+            </FadeInStaggerItem>
           </div>
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* ═══ FEATURES / BENTO ═══ */}
       <section className="features-section">
-        <div className="container">
-          <p className="section-eyebrow">Built for real groups</p>
-          <h2 className="section-title">
-            Everything the group
-            <span className="italic-line">treasurer actually needs.</span>
-          </h2>
+        <StaggerContainer className="container">
+          <FadeInStaggerItem>
+            <p className="section-eyebrow">Built for real groups</p>
+            <h2 className="section-title">
+              Everything the group
+              <span className="italic-line">treasurer actually needs.</span>
+            </h2>
+          </FadeInStaggerItem>
 
           <div className="bento">
             {/* Row 1: 600 | 424 */}
             <div className="bento-row">
               {/* Card 1: Join now, pay later */}
-              <article className="feat-card">
+              <FadeInStaggerItem className="feat-card">
                 <div className="feat-icon-wrap icon-blue-light">
                   <IconHandClick />
                 </div>
@@ -373,10 +388,10 @@ export default function Home() {
                     ✅&nbsp;&nbsp;Paid · Confirmed on-chain · Admin notified
                   </div>
                 </div>
-              </article>
+              </FadeInStaggerItem>
 
               {/* Card 2: Live progress */}
-              <article className="feat-card">
+              <FadeInStaggerItem className="feat-card" delay={0.1}>
                 <div className="feat-icon-wrap icon-green-border">
                   <IconProgress />
                 </div>
@@ -409,13 +424,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </FadeInStaggerItem>
             </div>
 
             {/* Row 2: 424 | 600 */}
             <div className="bento-row">
               {/* Card 3: Reminders */}
-              <article className="feat-card">
+              <FadeInStaggerItem className="feat-card">
                 <div className="feat-icon-wrap icon-orange-border">
                   <IconNotification />
                 </div>
@@ -463,10 +478,10 @@ export default function Home() {
                     🔔 Remind 38 unpaid members
                   </button>
                 </div>
-              </article>
+              </FadeInStaggerItem>
 
               {/* Card 4: Instant confirmation */}
-              <article className="feat-card">
+              <FadeInStaggerItem className="feat-card" delay={0.1}>
                 <div className="feat-icon-wrap icon-blue-light">
                   <IconLightning />
                 </div>
@@ -476,23 +491,25 @@ export default function Home() {
                   <strong>No &quot;I sent it, check again&quot;</strong>{" "}
                   conversations ever again.
                 </p>
-              </article>
+              </FadeInStaggerItem>
             </div>
           </div>
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* ═══ STORIES ═══ */}
       <section className="stories-section">
-        <div className="container">
-          <p className="section-eyebrow">Real stories</p>
-          <h2 className="section-title section-title-light">
-            From class reps to
-            <span className="italic-line">community builders.</span>
-          </h2>
+        <StaggerContainer className="container">
+          <FadeInStaggerItem>
+            <p className="section-eyebrow">Real stories</p>
+            <h2 className="section-title section-title-light">
+              From class reps to
+              <span className="italic-line">community builders.</span>
+            </h2>
+          </FadeInStaggerItem>
 
           <div className="stories-grid">
-            <article className="story-card">
+            <FadeInStaggerItem className="story-card">
               <span className="story-tag blue">
                 <IconGoalPool style={{ width: 18, height: 18 }} />
                 Goal Pool
@@ -514,9 +531,9 @@ export default function Home() {
                   <p>Class Rep, 300L Engineering, FUTO</p>
                 </div>
               </div>
-            </article>
+            </FadeInStaggerItem>
 
-            <article className="story-card">
+            <FadeInStaggerItem className="story-card" delay={0.1}>
               <span className="story-tag green-tag">
                 <IconImpactPool style={{ width: 18, height: 18 }} />
                 Impact Pool
@@ -543,9 +560,9 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </article>
+            </FadeInStaggerItem>
 
-            <article className="story-card">
+            <FadeInStaggerItem className="story-card" delay={0.2}>
               <span className="story-tag brown">
                 <IconCooperative style={{ width: 24, height: 24 }} />
                 Cooperative
@@ -572,15 +589,15 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </article>
+            </FadeInStaggerItem>
           </div>
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* ═══ CTA ═══ */}
       <section className="cta-section" id="cta">
         <div className="cta-glow" />
-        <div className="container cta-inner">
+        <FadeIn className="container cta-inner">
           <h2 className="section-title">
             Stop being
             <span className="italic-line">Chidi.</span>
@@ -591,14 +608,14 @@ export default function Home() {
             kept some. Create a pool instead.
           </p>
           <div className="cta-actions">
-            <a className="btn-primary" href="#">
+            <a className="btn-primary" href="/waitlist">
               Create Your First Pool — Free →
             </a>
             <a className="btn-secondary" href="#">
               See how it works
             </a>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* ═══ FOOTER ═══ */}

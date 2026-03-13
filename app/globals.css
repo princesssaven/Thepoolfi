@@ -1765,3 +1765,585 @@
     padding: 24px 0;
   }
 }
+
+/* ─── Waitlist Page ─── */
+.waitlist-page {
+  min-height: 100vh;
+  background: var(--pf-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+}
+
+.waitlist-container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.waitlist-back-link {
+  color: var(--pf-text-muted-white-40);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.waitlist-back-link:hover {
+  color: #fff;
+}
+
+.waitlist-title {
+  font-family: var(--pf-font-sora);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.waitlist-subtitle {
+  color: var(--pf-text-muted-white-40);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 36px;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.waitlist-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.waitlist-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pf-text-muted-white-65);
+}
+
+.waitlist-label .required {
+  color: var(--pf-accent);
+}
+
+.waitlist-label .optional {
+  color: var(--pf-text-muted-white-35);
+  font-weight: 400;
+}
+
+.waitlist-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--pf-font-dm-sans);
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.waitlist-input::placeholder {
+  color: var(--pf-text-muted-white-20);
+}
+
+.waitlist-input:focus {
+  border-color: var(--pf-accent);
+  background: rgba(27, 79, 216, 0.04);
+}
+
+.waitlist-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.waitlist-option {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--pf-text-muted-white-65);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--pf-font-dm-sans);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+
+.waitlist-option:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.waitlist-option.selected {
+  border-color: var(--pf-accent);
+  background: rgba(27, 79, 216, 0.08);
+  color: #fff;
+}
+
+.waitlist-submit {
+  background: linear-gradient(135deg, #1B4FD8 0%, #2563EB 50%, #1B4FD8 100%);
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 99px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--pf-font-dm-sans);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+}
+
+.waitlist-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(27, 79, 216, 0.35);
+}
+
+.waitlist-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.waitlist-spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.waitlist-disclaimer {
+  text-align: center;
+  color: var(--pf-text-muted-white-20);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* Success State */
+.waitlist-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #12B76A 0%, #22C55E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.waitlist-success .waitlist-title {
+  margin-bottom: 0;
+}
+
+.waitlist-success .waitlist-subtitle {
+  margin-bottom: 16px;
+  max-width: 320px;
+}
+
+.btn-back-home {
+  color: var(--pf-accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.btn-back-home:hover {
+  color: #5B8AF5;
+}
+
+/* Waitlist responsive */
+@media (max-width: 480px) {
+  .waitlist-options {
+    grid-template-columns: 1fr;
+  }
+
+  .waitlist-title {
+    font-size: 24px;
+  }
+
+  .waitlist-submit {
+    font-size: 15px;
+    padding: 16px 28px;
+  }
+}
+
+/* ─── Admin Dashboard ─── */
+.admin-page {
+  min-height: 100vh;
+  background: var(--pf-bg-dark);
+  color: var(--pf-white);
+  padding: 60px 24px;
+}
+
+.admin-container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--pf-border-dark);
+  padding-bottom: 24px;
+}
+
+.admin-title {
+  font-family: var(--pf-font-sora);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+  margin: 0;
+}
+
+.admin-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--pf-card-dark);
+  border: 1px solid var(--pf-border-dark);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.stat-label {
+  color: var(--pf-text-muted-white-65);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-family: var(--pf-font-sora);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.admin-table-container {
+  background: var(--pf-card-dark);
+  border: 1px solid var(--pf-border-dark);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--pf-border-dark);
+}
+
+.admin-table th {
+  color: var(--pf-text-muted-white-65);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(27, 79, 216, 0.15);
+  color: var(--pf-blue-light);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.text-muted {
+  color: var(--pf-text-muted-white-40);
+}
+
+.admin-loading,
+.admin-error,
+.admin-empty {
+  padding: 48px;
+  text-align: center;
+  background: var(--pf-card-dark);
+  border: 1px solid var(--pf-border-dark);
+  border-radius: 12px;
+  color: var(--pf-text-muted-white-65);
+}
+
+.admin-error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* ─── Admin Search Bar ─── */
+.admin-search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+}
+
+.admin-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pf-text-muted-white-40);
+  pointer-events: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-search-input {
+  width: 100%;
+  background: var(--pf-card-dark);
+  border: 1px solid var(--pf-border-dark);
+  border-radius: 99px;
+  padding: 14px 44px 14px 44px;
+  color: #fff;
+  font-size: 14px;
+  font-family: var(--pf-font-dm-sans);
+  font-weight: 400;
+  outline: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-search-input::placeholder {
+  color: var(--pf-text-muted-white-40);
+}
+
+.admin-search-input:focus {
+  border-color: var(--pf-accent);
+  background: rgba(27, 79, 216, 0.04);
+  box-shadow: 0 0 0 4px rgba(27, 79, 216, 0.1);
+}
+
+.admin-search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--pf-text-muted-white-65);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  transition: all 0.2s;
+  font-size: 10px;
+}
+
+.admin-search-clear:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* ─── Admin Login Gate ─── */
+.admin-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+}
+
+.admin-login-card {
+  background: var(--pf-card-dark);
+  border: 1px solid var(--pf-border-dark);
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.admin-login-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.admin-login-title {
+  font-family: var(--pf-font-sora);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+  margin: 0;
+}
+
+.admin-login-subtitle {
+  color: var(--pf-text-muted-white-40);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.admin-login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-login-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--pf-font-dm-sans);
+  font-weight: 400;
+  outline: none;
+  text-align: center;
+  letter-spacing: 4px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.admin-login-input::placeholder {
+  color: var(--pf-text-muted-white-20);
+  letter-spacing: normal;
+}
+
+.admin-login-input:focus {
+  border-color: var(--pf-accent);
+  background: rgba(27, 79, 216, 0.04);
+}
+
+.admin-login-input.input-error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.admin-login-error {
+  color: #ef4444;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.admin-login-btn {
+  background: linear-gradient(135deg, #1B4FD8 0%, #2563EB 50%, #1B4FD8 100%);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--pf-font-dm-sans);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 4px;
+}
+
+.admin-login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(27, 79, 216, 0.35);
+}
+
+.admin-login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-login-back {
+  color: var(--pf-text-muted-white-40);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 16px;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.admin-login-back:hover {
+  color: #fff;
+}

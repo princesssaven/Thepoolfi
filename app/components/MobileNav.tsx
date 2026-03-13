@@ -35,7 +35,7 @@ export default function MobileNav() {
                 <a href="#blogs" onClick={() => setOpen(false)}>
                     Blogs
                 </a>
-                <a className="btn-cta mobile-cta" href="#cta" onClick={() => setOpen(false)}>
+                <a className="btn-cta mobile-cta" href="/waitlist" onClick={() => setOpen(false)}>
                     Get Started →
                 </a>
             </nav>
