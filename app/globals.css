@@ -447,7 +447,7 @@
 
 .ticker-track {
   display: flex;
-  animation: marquee 40s linear infinite;
+  animation: marquee 20s linear infinite;
   white-space: nowrap;
 }
 
@@ -1530,12 +1530,12 @@
 /* ── Mobile landscape / large phone ── */
 @media (max-width: 640px) {
   .hero-h1 {
-    font-size: 36px;
-    line-height: 1.1;
+    font-size: 48px;
+    line-height: 1.05;
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 1.1;
   }
 
@@ -1649,13 +1649,13 @@
 /* ── Small phones ── */
 @media (max-width: 480px) {
   .hero-h1 {
-    font-size: 30px;
-    line-height: 1.15;
+    font-size: 42px;
+    line-height: 1.05;
   }
 
   .section-title {
-    font-size: 30px;
-    line-height: 1.15;
+    font-size: 36px;
+    line-height: 1.1;
   }
 
   .cta-inner .section-title {
