@@ -10,6 +10,7 @@ import IconHandClick from "./assets/icon-hand-click.svg";
 import IconProgress from "./assets/icon-progress.svg";
 import IconNotification from "./assets/icon-notification.svg";
 import IconLightning from "./assets/icon-lightning.svg";
+import MobileNav from "./components/MobileNav";
 
 export default function Home() {
   const tickerItems = [
@@ -34,9 +35,10 @@ export default function Home() {
             <a href="#how-it-works">How It Works</a>
             <a href="#blogs">Blogs</a>
           </nav>
-          <a className="btn-cta" href="#cta">
+          <a className="btn-cta header-cta" href="#cta">
             Get Started →
           </a>
+          <MobileNav />
         </div>
       </header>
 
@@ -338,134 +340,144 @@ export default function Home() {
             <span className="italic-line">treasurer actually needs.</span>
           </h2>
 
-          <div className="features-grid">
-            {/* Card 1: Join now, pay later */}
-            <article className="feat-card">
-              <div className="feat-icon-wrap">
-                <IconHandClick />
-              </div>
-              <h3>Join now, pay later</h3>
-              <p>
-                When someone receives a pool link they can{" "}
-                <strong>join without paying immediately</strong>. They&apos;re
-                recorded as a member, the pool is saved to their dashboard, and
-                the admin sees them as pending. The reminder button finally has
-                someone to remind.
-              </p>
-              <div className="feat-mock">
-                <div className="mock-step-row dim">
-                  👤&nbsp;&nbsp;Guest arrives via link
+          <div className="bento">
+            {/* Row 1: 600 | 424 */}
+            <div className="bento-row">
+              {/* Card 1: Join now, pay later */}
+              <article className="feat-card">
+                <div className="feat-icon-wrap icon-blue-light">
+                  <IconHandClick />
                 </div>
-                <div className="mock-step-label">↓&nbsp;&nbsp;clicks &quot;Join Pool&quot;</div>
-                <div className="mock-step-row purple">
-                  ✋&nbsp;&nbsp;Joined · Pending payment · Saved to My Pools
+                <h3>Join now, pay later</h3>
+                <p>
+                  When someone receives a pool link they can{" "}
+                  <strong>join without paying immediately</strong>.
+                  They&apos;re recorded as a member, the pool is saved to their
+                  dashboard, and the admin sees them as pending. The reminder
+                  button finally has someone to remind.
+                </p>
+                <div className="feat-mock jf-mock">
+                  <div className="jf-row dim">
+                    👤&nbsp;&nbsp;Guest arrives via link
+                  </div>
+                  <div className="jf-arrow">
+                    ↓&nbsp;&nbsp;clicks &quot;Join Pool&quot;
+                  </div>
+                  <div className="jf-row purple">
+                    ✋&nbsp;&nbsp;Joined · Pending payment · Saved to My Pools
+                  </div>
+                  <div className="jf-arrow">
+                    ↓&nbsp;&nbsp;pays before deadline
+                  </div>
+                  <div className="jf-row green-row">
+                    ✅&nbsp;&nbsp;Paid · Confirmed on-chain · Admin notified
+                  </div>
                 </div>
-                <div className="mock-step-label">↓&nbsp;&nbsp;pays before deadline</div>
-                <div className="mock-step-row green-row">
-                  ✅&nbsp;&nbsp;Paid · Confirmed on-chain · Admin notified
-                </div>
-              </div>
-            </article>
+              </article>
 
-            {/* Card 2: Live progress */}
-            <article className="feat-card">
-              <div className="feat-icon-wrap">
-                <IconProgress />
-              </div>
-              <h3>Live progress for everyone</h3>
-              <p>
-                Contributors see exactly how the pool is tracking.{" "}
-                <strong>No need to ask the admin for an update</strong> — the
-                numbers are always live and verifiable.
-              </p>
-              <div className="feat-mock">
-                <div className="mock-progress-wrap">
-                  <div className="mock-progress-header">
+              {/* Card 2: Live progress */}
+              <article className="feat-card">
+                <div className="feat-icon-wrap icon-green-border">
+                  <IconProgress />
+                </div>
+                <h3>Live progress for everyone</h3>
+                <p>
+                  Contributors see exactly how the pool is tracking.{" "}
+                  <strong>No need to ask the admin for an update</strong> — the
+                  numbers are always live and verifiable.
+                </p>
+                <div className="feat-mock pm-mock">
+                  <div className="pm-label">
                     <span>300L Class Dues · 2025/26</span>
                     <span>78%</span>
                   </div>
-                  <div className="mock-progress-bar">
-                    <div className="mock-progress-fill" />
+                  <div className="pm-bar">
+                    <div className="pm-fill" />
                   </div>
-                  <div className="mock-chips">
-                    <div className="mock-chip">
-                      <span className="mock-chip-value green-val">312</span>
-                      <span className="mock-chip-label">Paid</span>
+                  <div className="pm-chips">
+                    <div className="pm-chip">
+                      <span className="pm-chip-val green-val">312</span>
+                      <span className="pm-chip-lbl">Paid</span>
                     </div>
-                    <div className="mock-chip">
-                      <span className="mock-chip-value yellow-val">38</span>
-                      <span className="mock-chip-label">Pending</span>
+                    <div className="pm-chip">
+                      <span className="pm-chip-val yellow-val">38</span>
+                      <span className="pm-chip-lbl">Pending</span>
                     </div>
-                    <div className="mock-chip">
-                      <span className="mock-chip-value blue-val">₦312k</span>
-                      <span className="mock-chip-label">Raised</span>
+                    <div className="pm-chip">
+                      <span className="pm-chip-val blue-val">₦312k</span>
+                      <span className="pm-chip-lbl">Raised</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
-            {/* Card 3: Reminders */}
-            <article className="feat-card">
-              <div className="feat-icon-wrap">
-                <IconNotification />
-              </div>
-              <h3>Reminders that know who to target</h3>
-              <p>
-                One button.{" "}
-                <strong>Only the people who joined but haven&apos;t paid</strong>{" "}
-                get reminded — not the whole group. No more awkward broadcast
-                messages to people who already paid.
-              </p>
-              <div className="feat-mock">
-                <div className="mock-member-row">
-                  <div
-                    className="mock-avatar"
-                    style={{ backgroundColor: "#12b76a" }}
-                  >
-                    FO
-                  </div>
-                  <span className="mock-member-name">Femi Okonkwo</span>
-                  <span className="mock-badge joined">Joined</span>
+            {/* Row 2: 424 | 600 */}
+            <div className="bento-row">
+              {/* Card 3: Reminders */}
+              <article className="feat-card">
+                <div className="feat-icon-wrap icon-orange-border">
+                  <IconNotification />
                 </div>
-                <div className="mock-member-row">
-                  <div
-                    className="mock-avatar"
-                    style={{ backgroundColor: "#f79009" }}
-                  >
-                    BA
+                <h3>Reminders that know who to target</h3>
+                <p>
+                  One button.{" "}
+                  <strong>
+                    Only the people who joined but haven&apos;t paid
+                  </strong>{" "}
+                  get reminded — not the whole group. No more awkward broadcast
+                  messages to people who already paid.
+                </p>
+                <div className="feat-mock rm-mock">
+                  <div className="rm-row">
+                    <div
+                      className="rm-av"
+                      style={{ backgroundColor: "#7C3AED" }}
+                    >
+                      FO
+                    </div>
+                    <span className="rm-name">Femi Okonkwo</span>
+                    <span className="rm-badge joined">Joined</span>
                   </div>
-                  <span className="mock-member-name">Bisi Adeleke</span>
-                  <span className="mock-badge pending">Pending</span>
-                </div>
-                <div className="mock-member-row">
-                  <div
-                    className="mock-avatar"
-                    style={{ backgroundColor: "#7c3aed" }}
-                  >
-                    UI
+                  <div className="rm-row">
+                    <div
+                      className="rm-av"
+                      style={{ backgroundColor: "#F79009" }}
+                    >
+                      BA
+                    </div>
+                    <span className="rm-name">Bisi Adeleke</span>
+                    <span className="rm-badge pending">Pending</span>
                   </div>
-                  <span className="mock-member-name">Uche Ibe</span>
-                  <span className="mock-badge pending">Pending</span>
+                  <div className="rm-row">
+                    <div
+                      className="rm-av"
+                      style={{ backgroundColor: "#0891B2" }}
+                    >
+                      UI
+                    </div>
+                    <span className="rm-name">Uche Ibe</span>
+                    <span className="rm-badge pending">Pending</span>
+                  </div>
+                  <button className="rm-remind-btn">
+                    🔔 Remind 38 unpaid members
+                  </button>
                 </div>
-                <button className="mock-remind-btn">
-                  🔔 Remind 38 unpaid members
-                </button>
-              </div>
-            </article>
+              </article>
 
-            {/* Card 4: Instant confirmation */}
-            <article className="feat-card">
-              <div className="feat-icon-wrap">
-                <IconLightning />
-              </div>
-              <h3>Instant confirmation</h3>
-              <p>
-                Pay from your PoolFi wallet. Confirmed instantly.{" "}
-                <strong>No &quot;I sent it, check again&quot;</strong>{" "}
-                conversations ever again.
-              </p>
-            </article>
+              {/* Card 4: Instant confirmation */}
+              <article className="feat-card">
+                <div className="feat-icon-wrap icon-blue-light">
+                  <IconLightning />
+                </div>
+                <h3>Instant confirmation</h3>
+                <p>
+                  Pay from your PoolFi wallet. Confirmed instantly.{" "}
+                  <strong>No &quot;I sent it, check again&quot;</strong>{" "}
+                  conversations ever again.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
