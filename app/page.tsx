@@ -48,7 +48,7 @@ export default function Home() {
         <StaggerContainer className="container hero-content">
           <FadeInStaggerItem className="hero-pill">
             <span className="hero-dot" />
-            Built on Stellar · Now in Beta
+            Built For You · Now in Beta
           </FadeInStaggerItem>
 
           <h1 className="hero-h1">
