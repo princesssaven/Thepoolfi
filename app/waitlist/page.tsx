@@ -131,7 +131,7 @@ export default function WaitlistPage() {
                                 className={`waitlist-option ${userType === "chasing_to_pay" ? "selected" : ""}`}
                                 onClick={() => setUserType(userType === "chasing_to_pay" ? null : "chasing_to_pay")}
                             >
-                                Always chasing to pay
+                                Always being chased to pay
                             </button>
                             <button
                                 type="button"
